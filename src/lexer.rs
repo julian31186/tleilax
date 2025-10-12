@@ -62,16 +62,23 @@ pub fn lex(input: &str) -> Result<Vec<Token>, YamlError> {
 
                         for _ in 0..stack.len() / 2 {
                             current_indentation += 1;
-                            res.push(Token::Indent);
                         }
 
                         if current_indentation > parent_indentation && current_indentation - parent_indentation > 1 {
                             return Err(YamlError::InvalidIndentation);
                         }
 
+                        let mut has_dedent = false;
                         if current_indentation < parent_indentation {
                             for _ in 0..parent_indentation - current_indentation {
                                 res.push(Token::Dedent);
+                                has_dedent = true;
+                            }
+                        }
+
+                        if !has_dedent {
+                            for _ in 0..current_indentation {
+                                res.push(Token::Indent);
                             }
                         }
 

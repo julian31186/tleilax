@@ -1,11 +1,10 @@
+use std::collections::HashMap;
+
 #[derive(Debug)]
 pub enum Token {
     // Identifiers and values
     Identifier(String),    // keys / values
     String(String),        // quoted strings
-    Number(f64),           // numbers (handle leading zeros)
-    Boolean(bool),         // true/false
-    Null,                  // ~ or null
     
     // Structure tokens
     Colon,                // :
@@ -29,4 +28,14 @@ pub enum Token {
     Anchor(String),       // &name
     Alias(String),        // *name
     Merge,                // <<
+}
+
+pub enum Value {
+    Integer(i64),
+    Float(f64),
+    Boolean(bool),
+    String(String),
+    Null,
+    List(Vec<Value>),
+    Map(HashMap<String, Value>),
 }
