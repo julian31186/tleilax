@@ -8,4 +8,4 @@
  * Handle non-string values with spaces
  * Handle flow / block style
  * Handle lists / objects
- * Handle folder / multi-line values
+ * Handle folded / multi-line values
