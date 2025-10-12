@@ -6,6 +6,7 @@
  * Handle colons within key/value pairs (i.e. key: https://example.com)
  * Leverage helper funcs more (refactor)
  * Handle non-string values with spaces
- * Handle flow / block style
- * Handle lists / objects
- * Handle folded / multi-line values
+ Lexer
+    * Handle flow / block style
+    * Handle lists / objects
+    * Handle folded / multi-line values
