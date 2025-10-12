@@ -82,12 +82,17 @@ pub fn lex(input: &str) -> Result<Vec<Token>, YamlError> {
                         key.push(ch);
                     } else {
                         value.push(ch);
-                    }                    
+                    }
                 },
             }
         }
         parent_indentation = current_indentation;
         is_first_line = false;
+
+        if has_colon && key.len() == 0 {
+            return Err(YamlError::ColonWithNoKey);
+        }
+        
         if key.len() > 0 && value.len() == 0 {
             if !has_colon {
                 return Err(YamlError::KeyWithNoColon);
