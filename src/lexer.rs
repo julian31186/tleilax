@@ -95,7 +95,7 @@ pub fn lex(input: &str) -> Result<Vec<Token>, YamlError> {
             return Err(YamlError::KeyWithNoValue);
         }
         if value.len() > 0 {
-            res.push(Token::Identifier(value.clone()));
+            res.push(Token::Identifier(value));
         }
     }
 
