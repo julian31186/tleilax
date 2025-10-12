@@ -1,0 +1,46 @@
+# Example YAML input (uses 2 spaces for indentation & does not allow tabs)
+# Parser must be able to detect the following
+# - scalar values / key:value pairs (with type inference)
+# - lists (block & flow style)
+# - nested objects (block & flow style)
+# - comments
+# - literal blocks
+# - folded blocks
+# - ~ null values
+# - drop leading zeros for number types
+# - anchor & merge anchors
+name: "Julian Elmasry"
+age: 022
+skills:
+  - {language: "go", level: "intermediate"}
+  - language: python
+    level: "intermediate"
+university:
+  name: "University at Buffalo"
+  major: "Computer Science"
+  graduation_year: 2024
+profile:
+  employed: true
+  place_of_work: "Coinbase"
+  title: "Software Engineer"
+  domain: "Payments"
+  technologies_used: [go, mongo_db, docker, k8s, kafka]
+hobbies:
+  skiing:
+    skill_level: "intermediate"
+  programming:
+    skill_level: "noob"
+pets:
+  name: Ellie
+  breed: |
+    American 
+    Shorthair
+  pattern: >
+    Black and Gray
+    Stripes
+
+null0: ~
+null1: &test
+  test: "null"
+null2: 
+  <<: *test
