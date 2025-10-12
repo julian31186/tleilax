@@ -4,7 +4,6 @@ use std::collections::HashMap;
 pub enum Token {
     // Identifiers and values
     Identifier(String),    // keys / values
-    String(String),        // quoted strings
     
     // Structure tokens
     Colon,                // :
@@ -14,6 +13,7 @@ pub enum Token {
     LeftBracket,          // [
     RightBracket,         // ]
     Comma,                // ,
+    Quote,                // "
     
     // Special tokens
     Newline,
