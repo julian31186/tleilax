@@ -100,11 +100,8 @@ pub fn lex(input: &str) -> Result<Vec<Token>, YamlError> {
             return Err(YamlError::ColonWithNoKey);
         }
         
-        if key.len() > 0 && value.len() == 0 {
-            if !has_colon {
-                return Err(YamlError::KeyWithNoColon);
-            }
-            return Err(YamlError::KeyWithNoValue);
+        if key.len() > 0 && !has_colon {
+            return Err(YamlError::KeyWithNoColon);
         }
         if value.len() > 0 {
             res.push(Token::Identifier(value));

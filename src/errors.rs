@@ -4,7 +4,6 @@ pub enum YamlError {
    FirstLineNotZeroIndentation,
    ColonWithNoKey,
    InvalidIndentation,
-   KeyWithNoValue,
    KeyWithNoColon,
 }
 
@@ -22,9 +21,6 @@ impl std::fmt::Display for YamlError {
             },
             YamlError::InvalidIndentation => {
                 write!(f, "Invalid indentation")
-            },
-            YamlError::KeyWithNoValue => {
-                write!(f, "This key does not have a value")
             },
             YamlError::KeyWithNoColon => {
                 write!(f, "This key does not have a colon")
