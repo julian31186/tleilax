@@ -8,5 +8,5 @@
  * Handle non-string values with spaces
  Lexer
     * Handle flow / block style objects
-    * Handle lists
     * Handle folded / multi-line values
+    * Handle lists
