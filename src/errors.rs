@@ -5,6 +5,7 @@ pub enum YamlError {
    ColonWithNoKey,
    InvalidIndentation,
    KeyWithNoColon,
+   InvalidListItemPosition,
 }
 
 impl std::fmt::Display for YamlError {
@@ -24,6 +25,9 @@ impl std::fmt::Display for YamlError {
             },
             YamlError::KeyWithNoColon => {
                 write!(f, "This key does not have a colon")
+            },
+            YamlError::InvalidListItemPosition => {
+                write!(f, "Block list items must appear on a new indented line after a colon")
             },
         }
     }

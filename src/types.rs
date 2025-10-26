@@ -14,6 +14,7 @@ pub enum Token {
     RightBracket,         // ]
     Comma,                // ,
     Quote,                // "
+    ListItem,             // -
     
     // Special tokens
     Newline,
