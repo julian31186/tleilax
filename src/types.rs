@@ -7,17 +7,9 @@ pub enum Token {
     
     // Structure tokens
     Colon,                // :
-    Dash,                 // -
-    LeftBrace,            // {
-    RightBrace,           // }
-    LeftBracket,          // [
-    RightBracket,         // ]
-    Comma,                // ,
-    Quote,                // "
     ListItem,             // -
     
     // Special tokens
-    Newline,
     Indent,               // indentation detected (parser handles level)
     Dedent,               // dedentation detected (parser handles level)
     
@@ -31,6 +23,7 @@ pub enum Token {
     Merge,                // <<
 }
 
+#[derive(Debug)]
 pub enum Value {
     Integer(i64),
     Float(f64),

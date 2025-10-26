@@ -1,9 +1,6 @@
-# Test
-name:     JuliaN
-  test1: a
-    test3: b
-    test4: c  
-test6: 
-  - asdasd:
-      a : b
-     
+items:           # level 0 - object
+  - name: test   # level 1 - list
+    nested:      # level 2 - object (inside list item)
+      - sub      # level 3 - nested list
+  - key: value   # level 2 - back to object
+  - name: test2  # level 1 - back to main list

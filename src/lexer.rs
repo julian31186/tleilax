@@ -124,7 +124,6 @@ pub fn lex(input: &str) -> Result<Vec<Token>, YamlError> {
                             started = true;
                             saw_list_item_on_this_line = true;
                             res.push(Token::ListItem);
-                            continue;
                         } else {
                             return Err(YamlError::InvalidListItemPosition);
                         }

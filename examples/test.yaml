@@ -12,7 +12,6 @@
 name: "Julian Elmasry"
 age: 022
 skills:
-  - {language: "go", level: "intermediate"}
   - language: python
     level: "intermediate"
 university:
@@ -24,7 +23,6 @@ profile:
   place_of_work: "Coinbase"
   title: "Software Engineer"
   domain: "Payments"
-  technologies_used: [go, mongo_db, docker, k8s, kafka]
 hobbies:
   skiing:
     skill_level: "intermediate"
